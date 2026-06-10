@@ -1,0 +1,55 @@
+class StackArray{
+
+        int top=-1;
+        int[] arr;
+        int size;
+        public StackArray(int size){
+            this.size=size;
+            this.arr=new int[size];
+        }
+        public void push(int data){
+            if(top==size-1){
+                System.out.println("Stack Overflow");
+
+            }
+            else{
+                arr[++top]=data;
+            }
+        }
+        public void pop(){
+            if(top==-1){
+                System.out.println("Stack Underflow");
+            }
+            else{
+               top--; 
+            }
+        }
+        public void display(){
+            if(top==-1){
+                System.out.println("Stack is empty");
+            }
+            else{
+                for(int i=top;i>=0;i--){
+                    System.out.println(arr[i]);
+
+                }
+            }
+        }
+            public static void main(String args[]){
+                StackArray stack=new StackArray(5);
+                stack.push(10);
+                stack.push(20);
+                stack.push(30);
+                stack.push(40);
+                stack.push(50);
+                stack.pop();
+                stack.display();
+                stack.push(100);
+                stack.push(200);
+                stack.push(300);
+                
+                stack.display();
+            }
+        }
+
+
